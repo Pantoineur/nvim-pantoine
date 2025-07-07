@@ -12,7 +12,8 @@ return {
                 ensure_installed = {
                     "lua_ls",
                     "gopls",
-                    "csharp_ls"
+                    "csharp_ls",
+                    "gdscript"
                 }
             })
         end
@@ -24,6 +25,11 @@ return {
             vim.lsp.enable('gopls')
             vim.lsp.enable('lua_ls')
             vim.lsp.enable('csharp_ls')
+            vim.lsp.enable('gdscript')
+            vim.lsp.config('gdscript', {
+                capabilities = capabilities,
+                cmd = {"ncat", "127.0.0.1", "6006"}
+            })
             vim.lsp.config('csharp_ls', {
                 capabilities = capabilities
             })

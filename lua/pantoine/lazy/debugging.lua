@@ -18,6 +18,22 @@ return {
                 dapui.close()
             end
 
+            dap.adapters.godot = {
+                type = "server",
+                host = "127.0.0.1",
+                port = 6006,
+            }
+
+            dap.configurations.gdscript = {
+                {
+                    type = "godot",
+                    request = "launch",
+                    name = "Lauch scene",
+                    project = "${workspaceFolder}",
+                    launch_scene = true
+                },
+            }
+
             vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, {})
             vim.keymap.set("n", "<leader>dc", dap.continue, {})
         end,
