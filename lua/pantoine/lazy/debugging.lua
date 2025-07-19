@@ -36,6 +36,22 @@ return {
 
             vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, {})
             vim.keymap.set("n", "<leader>dc", dap.continue, {})
+
+            dap.adapters.godot = {
+                type = "server",
+                host = "127.0.0.1",
+                port = 6006,
+            }
+
+            dap.configurations.gdscript = {
+                {
+                    type = "godot",
+                    request = "launch",
+                    name = "Launch",
+                    project = "${workspaceFolder}",
+                    launch_scene = true,
+                }
+            }
         end,
     },
     {

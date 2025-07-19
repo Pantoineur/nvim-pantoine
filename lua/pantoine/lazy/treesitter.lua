@@ -7,7 +7,7 @@ return {
             -- A list of parser names, or "all"
             ensure_installed = {
                 "javascript", "typescript", "c", "lua", "rust",
-                "jsdoc", "bash", "go",
+                "jsdoc", "bash", "go", "gdscript", "godot_resource", "gdshader",
             },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
